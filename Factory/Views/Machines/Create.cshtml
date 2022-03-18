@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+<div id="push-page-content-up"></div>
+
+@model Factory.Models.Machine;
+
+<h1>Order some new Equipment from Bane?</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Hardware)
+  @Html.TextBoxFor(model => model.Hardware)
+
+  @Html.Label("Which Brute is going to be working on this machine?")
+  @Html.DropDownList("EngineerId")
+
+  <input type="submit" value="Place the order" class="btn btn-success" />
+}
+
+<h3>@Html.ActionLink("Wanna see all our current Equipment?", "Index")</h3>
