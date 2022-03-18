@@ -9,18 +9,18 @@
 
 <h1>Zeta-String Production Equipment</h1>
 
-if (Model.Count == 0)
+@if (Model.Count == 0)
 {
   <p><em>"I-I am terribly sorry to report that our factory is b-b-b-BARREN! Joker must of sent his goons to steal what equipment we had!! We might have to create a new contract with Bane to secure more Equipment so we can begin production imediately. Y-Y-Your orders sir?"</em></p>
 }
 else
 {
-  <p><em>"G-Great news sir! Bane delivered as he agreed upon. The top secret tech Mr. Freeze was working on is now ours! Ha-HA! There can be only 1 'MR.' in Gotham! Ha-HA!"</em></p>
+  <p><em>"G-Great news sir! Bane delivered as he agreed upon. The top secret tech Mr. Freeze was working on is now ours!"</em></p>
 }
 
 @foreach (Machine machine in Model)
 {
   <li>@Html.ActionLink($"{machine.Hardware}", "Details", new { id = machine.MachineId })</li>
 }
-
+<br>
 <h3>@Html.ActionLink("\"Place an order with Bane for more Equipment?\"", "Create")</h3>

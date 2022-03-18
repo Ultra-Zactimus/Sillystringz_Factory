@@ -10,12 +10,17 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Hardware)
+  <h5>Name of the Machine: </h5>
   @Html.TextBoxFor(model => model.Hardware)
-
-  @Html.Label("Which Brute is going to be working on this machine?")
-  @Html.DropDownList("EngineerId")
-
+  
+  <div>
+    <br>
+    <h5>@Html.Label("Which Brute is going to be working on this machine?")</h5>
+    <div>
+      @Html.DropDownList("EngineerId")
+    </div>
+  </div>
+  <br>
   <input type="submit" value="Place the order" class="btn btn-success" />
 }
 
