@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+<div id="push-page-content-up"></div>
+
+@using Factory.Models;
+
+<h1>Zeta-String Engineers</h1>
+
+<p>"Y-Your current Zeta-Brutes sir!"</p>
+
+@if (Model.Count == 0)
+{
+  <p><em>"I'm..I'm sorry to report sir! Looks like everyone bailed. We must hire more workers..."</em></p>
+}
+
+<ul>
+  @foreach (Engineer engineer in Model)
+  {
+    <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+  }
+</ul>
+
+<p><em>"Sir! We can add more workers if you would like? The applications are coming in, Riddler, Mad Hatter and Two-Face have agreed to help our efforts"</em></p>
+
+<h3>@Html.ActionLink("\"Employ a new Engineer?\"", "Create")</h3>
