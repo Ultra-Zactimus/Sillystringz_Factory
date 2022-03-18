@@ -11,14 +11,16 @@
 
 if (Model.Count == 0)
 {
-  <p>"I-I am terribly sorry to report that our factory is b-b-b-BARREN! Joker must of sent his goons to steal what equipment we had!! We might have to create a new contract with Bane to secure more Equipment so we can begin production imediately. Y-Y-Your orders sir?"</p>
+  <p><em>"I-I am terribly sorry to report that our factory is b-b-b-BARREN! Joker must of sent his goons to steal what equipment we had!! We might have to create a new contract with Bane to secure more Equipment so we can begin production imediately. Y-Y-Your orders sir?"</em></p>
 }
 else
 {
-  <p>"G-Great news sir! Bane delivered as he agreed upon. The top secret tech Mr. Freeze was working on is now ours! Ha-HA! There can be only 1 'MR.' in Gotham! Ha-HA!"</p>
+  <p><em>"G-Great news sir! Bane delivered as he agreed upon. The top secret tech Mr. Freeze was working on is now ours! Ha-HA! There can be only 1 'MR.' in Gotham! Ha-HA!"</em></p>
 }
 
 @foreach (Machine machine in Model)
 {
   <li>@Html.ActionLink($"{machine.Hardware}", "Details", new { id = machine.MachineId })</li>
 }
+
+<h3>@Html.ActionLink("\"Place an order with Bane for more Equipment?\"", "Create")</h3>
