@@ -38,5 +38,14 @@ namespace Factory.Controllers
       }
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      var thisMachine = _db.Machines
+        .Include(machine => machine.JoinEntities)
+        .ThenInclude(join => join.MachineId)
+        .FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
   }
 }
