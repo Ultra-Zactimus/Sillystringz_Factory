@@ -1,4 +1,4 @@
-# _Mr. Sillystringz's Factory: An Epicodus Code Review ![movie reel icon](/wwwroot/img/bat-symbol.jpg)_
+# _Mr. Sillystringz's Factory: An Epicodus Code Review_
 
 #### By Zachary Green
 
