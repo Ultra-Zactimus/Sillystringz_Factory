@@ -6,20 +6,23 @@
 
 @model Factory.Models.Machine;
 
-<h1>Assign an Engineer to this Machine</h1>
+<div class="container" id="main">
+  <h1>Assign an Engineer to this Machine</h1>
 
-<p><em>"Hey Boss, would you like to put someone on this Machine? We have some new hires that might be good here."</em></p>
+  <p><em>"Hey Boss, would you like to put someone on this Machine? We have some new hires that might be good here."</em>
+  </p>
 
-<h4>Put a Zeta-Brute on: @Html.DisplayFor(model => model.Hardware)</h4>
+  <h4>Put a Zeta-Brute on: @Html.DisplayFor(model => model.Hardware)</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
 
-  @Html.Label("Assign this Engineer?: ")
-  @Html.DropDownList("EngineerId")
+    @Html.Label("Assign this Engineer?: ")
+    @Html.DropDownList("EngineerId")
 
-  <input type="submit" value="Add 'em?"/>
-}
+    <input type="submit" value="Add 'em?" />
+  }
 
-<h3>@Html.ActionLink("Wanna see what Machines we currently have?", "Index")</h3>
+  <h3>@Html.ActionLink("Current Machine List", "Index")</h3>
+</div>

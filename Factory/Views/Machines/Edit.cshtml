@@ -4,21 +4,23 @@
 
 @model Factory.Models.Machine
 
-<h1>Modify this Machine?</h1>
+<div class="container" id="main">
+  <h1>Modify this Machine?</h1>
 
-<h4>Edit this Equipment: @Html.DisplayFor(model => model.Hardware)</h4>
+  <h4>Edit this Equipment: @Html.DisplayFor(model => model.Hardware)</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
 
-  @Html.LabelFor(model => model.Hardware)
-  @Html.EditorFor(model => model.Hardware)
+    @Html.LabelFor(model => model.Hardware)
+    @Html.EditorFor(model => model.Hardware)
 
-  @Html.Label("Engineer asignment:")
-  @Html.DropDownList("EngineerId")
+    @Html.Label("Engineer asignment:")
+    @Html.DropDownList("EngineerId")
 
-  <input type="submit" value="Save" />
-}
+    <input type="submit" value="Save" />
+  }
 
-<p>@Html.ActionLink("Would you like to see your Machines?", "Index")</p>
+  <p>@Html.ActionLink("Current Machine List", "Index")</p>
+</div>

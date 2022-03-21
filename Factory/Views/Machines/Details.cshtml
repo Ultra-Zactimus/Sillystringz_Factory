@@ -6,32 +6,34 @@
 
 @model Factory.Models.Machine;
 
-<h1>Production Equipment</h1>
-<hr>
+<div class="container" id="main">
+  <h1>Production Equipment</h1>
+  <hr>
 
-<h3>@Html.DisplayNameFor(model => model.Hardware): @Html.DisplayFor(model => model.Hardware)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Hardware): @Html.DisplayFor(model => model.Hardware)</h3>
 
-@if (@Model.JoinEntities.Count == 0)
-{
-  <p>"Boss! This new equipment is ready to be assigned to workers. Would you like to assign someone to get working?"</p>
-}
-else
-{
-  <h4>"So far, these are the Brutes who are working with this Equipment"</h4>
-  <ul>
-    @foreach(var join in Model.JoinEntities)
-    {
-      <li>@join.Engineer.Name</li>
-      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+  @if (@Model.JoinEntities.Count == 0)
+  {
+    <p>"Boss! This new equipment is ready to be assigned to workers. Would you like to assign someone to get working?"</p>
+  }
+  else
+  {
+    <h4>"So far, these are the Zeta-Brutes who are working with this Equipment"</h4>
+    <ul>
+      @foreach (var join in Model.JoinEntities)
       {
-        @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" value="Delete"/>
+        <li>@join.Engineer.Name</li>
+        @using (Html.BeginForm("DeleteEngineer", "Machines"))
+        {
+          @Html.Hidden("joinId", @join.EngineerMachineId)
+          <input type="submit" value="Delete" />
+        }
       }
-    }
-  </ul>
-}
+    </ul>
+  }
 
-<h3>@Html.ActionLink("Would you like to assign a worker?", "AddEngineer", new { id = Model.MachineId})</h3>
-<h3>@Html.ActionLink("Modify Equipment?", "Edit", new { id = Model.MachineId})</h3>
-<h3>@Html.ActionLink("Wanna sell off this Equipment to buy more later?", "Delete", new { id = Model.MachineId})</h3>
-<h3>@Html.ActionLink("Wanna see all our current Machines?", "Index")</h3>
+  <h3>@Html.ActionLink("Assign an Engineer", "AddEngineer", new { id = Model.MachineId})</h3>
+  <h3>@Html.ActionLink("Modify a Machine", "Edit", new { id = Model.MachineId})</h3>
+  <h3>@Html.ActionLink("Remove a Machine from Factory", "Delete", new { id = Model.MachineId})</h3>
+  <h3>@Html.ActionLink("Current Machine List", "Index")</h3>
+</div>

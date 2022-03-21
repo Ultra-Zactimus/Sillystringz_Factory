@@ -6,13 +6,15 @@
 
 @model Factory.Models.Engineer
 
-<h1>Employ a new Zeta-Brute</h1>
-<p>"Boss! We have some applicants, but they need new code names. Would you do us the honors?"</p>
+<div class="container" id="main">
+  <h1>Employ a new Zeta-Brute</h1>
+  <p>"Boss! We have some applicants, but they need new code names. Would you do us the honors?"</p>
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Let's get them working">
-}
-<p>@Html.ActionLink("Wanna see the rest of our Brutes sir?", "Index")</p>
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <input type="submit" value="Let's get them working">
+  }
+  <p>@Html.ActionLink("List of Engineers", "Index")</p>
+</div>

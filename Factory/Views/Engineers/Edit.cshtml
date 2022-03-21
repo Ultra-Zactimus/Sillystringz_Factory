@@ -4,17 +4,19 @@
 
 @model Factory.Models.Engineer
 
-<h1>Modify this Engineer's Code Name</h1>
+<div class="container" id="main">
+  <h1>Modify this Engineer's Code Name</h1>
 
-<h4>Would would you like to call them: @Html.DisplayFor(model => model.Name)</h4>
+  <h4>Would would you like to call them: @Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
 
-  <input type="submit" value="Save" />
-}
-<p>@Html.ActionLink("See all your workers?", "Index")</p>
+    <input type="submit" value="Save" />
+  }
+  <p>@Html.ActionLink("List of Engineers", "Index")</p>
+</div>

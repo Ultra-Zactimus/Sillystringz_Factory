@@ -6,26 +6,28 @@
 
 @model Factory.Models.Engineer;
 
-<h1>Zeta-Brute Details</h1>
-<hr>
+<div class="container" id="main">
+  <h1>Zeta-Brute Details</h1>
+  <hr>
 
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-@if (@Model.JoinEntities.Count == 0)
-{
-  <p><em>"This one is awaiting a job to get started on. What machine would you like to put them on?"</em></p>
-}
-else
-{
-  <h4>@Html.DisplayFor(model => model.Name) has been assigned to these Machines:</h4>
-  <ul>
-    @foreach (var join in Model.JoinEntities)
-    {
-      <li>@join.Machine.Hardware</li>
-    }
-  </ul>
-}
+  @if (@Model.JoinEntities.Count == 0)
+  {
+    <p><em>"This one is awaiting a job to get started on. What machine would you like to put them on?"</em></p>
+  }
+  else
+  {
+    <h4>@Html.DisplayFor(model => model.Name) has been assigned to these Machines:</h4>
+    <ul>
+      @foreach (var join in Model.JoinEntities)
+      {
+        <li>@join.Machine.Hardware</li>
+      }
+    </ul>
+  }
 
-<h3>@Html.ActionLink("See your Workers?", "Index", "Engineers")</h3>
-<h3>@Html.ActionLink("Want to give this one a new Code-Name?", "Edit", new { id = Model.EngineerId })</h3>
-<h3>@Html.ActionLink("Want to let this one go?", "Delete", new { id = Model.EngineerId })</h3>
+  <h3>@Html.ActionLink("List of Engineers", "Index", "Engineers")</h3>
+  <h3>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</h3>
+  <h3>@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId })</h3>
+</div>

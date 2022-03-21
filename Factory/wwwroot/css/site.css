@@ -1,8 +1,18 @@
 body
 {
   text-align: center;
+  background-color: black;
+  background-image: url('../img/gotham.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
-  background-color: rgb(41, 41, 41);
+}
+
+#main
+{
+  background-color: #292929;
+  border: solid rgb(0, 0, 0);
+  height: 100%;
 }
 
 h1, h4
@@ -52,4 +62,14 @@ header
 #push-page-content-up
 {
   margin-top: 100px;
+}
+
+#left
+{
+  float: left;
+}
+
+#right
+{
+  float: right;
 }

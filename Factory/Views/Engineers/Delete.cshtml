@@ -6,16 +6,18 @@
 
 @model Factory.Models.Engineer;
 
-<h1>Marked for Seperation</h1>
+<div class="container" id="main">
+  <h1>Marked for Seperation</h1>
 
-<p>"Boss! We have a lot of work to get done!! I-I-I'm sorry... Would you like to let this worker go?"</p>
+  <p>"Boss! We have a lot of work to get done!! I-I-I'm sorry... Would you like to let this worker go?"</p>
 
-<h3>@Html.DisplayNameFor(model => model.Name):</h3>
-<h4>@Html.DisplayFor(model => model.Name)</h4>
+  <h3>@Html.DisplayNameFor(model => model.Name):</h3>
+  <h4>@Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete"/>
-}
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" />
+  }
 
-<h3>@Html.ActionLink("Wanna see our current workforce?", "Index")</h3>
+  <h3>@Html.ActionLink("List of Engineers", "Index")</h3>
+</div>

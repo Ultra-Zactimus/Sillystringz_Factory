@@ -6,22 +6,24 @@
 
 @model Factory.Models.Machine;
 
-<h1>Order some new Equipment from Bane?</h1>
+<div class="container" id="main">
+  <h1>Order some new Equipment from Bane?</h1>
 
-@using (Html.BeginForm())
-{
-  <h5>Name of the Machine: </h5>
-  @Html.TextBoxFor(model => model.Hardware)
-  
-  <div>
-    <br>
-    <h5>@Html.Label("Which Brute is going to be working on this machine?")</h5>
+  @using (Html.BeginForm())
+  {
+    <h5>Name of the Machine: </h5>
+    @Html.TextBoxFor(model => model.Hardware)
+
     <div>
-      @Html.DropDownList("EngineerId")
+      <br>
+      <h5>@Html.Label("Which Brute is going to be working on this machine?")</h5>
+      <div>
+        @Html.DropDownList("EngineerId")
+      </div>
     </div>
-  </div>
-  <br>
-  <input type="submit" value="Place the order" class="btn btn-success" />
-}
+    <br>
+    <input type="submit" value="Place the order" class="btn btn-success" />
+  }
 
-<h3>@Html.ActionLink("Wanna see all our current Equipment?", "Index")</h3>
+  <h3>@Html.ActionLink("Current Machine List", "Index")</h3>
+</div>
